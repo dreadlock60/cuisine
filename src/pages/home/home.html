@@ -1,14 +1,32 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
+    <ion-title>  
+      LOGIN
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-list>
+    
+      <ion-item>
+        <ion-label floating>Username</ion-label>
+        <ion-input [(ngModel)]="userNameInput" type="text"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input [(ngModel)]="passwordInput" type="password"></ion-input>
+      </ion-item>
+    
+    </ion-list>
+    <div padding>
+        <ion-grid>
+            <ion-row>
+              <ion-col col-6><button ion-button outline full (click)="goToLobbyPage()" [disabled]="userNameInput !== useName && passwordInput !== password">LOGIN</button></ion-col>
+              <ion-col col-6><button ion-button full (click)="goToRegisterPage()">REGISTER</button></ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+    
 </ion-content>

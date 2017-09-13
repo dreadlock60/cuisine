@@ -6,11 +6,20 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { RegisterPage } from "../pages/register/register";
+import { LobbyPage } from "../pages/lobby/lobby";
+import { LandingPage } from "../pages/landing/landing";
+import { CreateRecipPage } from "../pages/create-recip/create-recip";
+import { Camera } from '@ionic-native/camera';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    RegisterPage,
+    LobbyPage,
+    LandingPage,
+    CreateRecipPage,
   ],
   imports: [
     BrowserModule,
@@ -19,11 +28,16 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    RegisterPage,
+    LobbyPage,
+    LandingPage,
+    CreateRecipPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

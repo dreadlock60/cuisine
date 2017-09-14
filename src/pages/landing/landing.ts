@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CreateRecipPage } from "../create-recip/create-recip";
 import { PreviewPage } from "../preview/preview";
+import { GlobalProvider } from '../../providers/global/global';
 
 /**
  * Generated class for the LandingPage page.
@@ -16,17 +17,22 @@ import { PreviewPage } from "../preview/preview";
   templateUrl: 'landing.html',
 })
 export class LandingPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  recettes: Array<any> = [];
+  constructor(public navCtrl: NavController, public navParams: NavParams,public global:GlobalProvider) {
+    
   }
+  ngOnInit() {
 
+ }
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LandingPage');
+    this.recettes = this.global.GetRecettes();
+    console.log(this.recettes);
   }
   openCreateRecip(){
     this.navCtrl.push(CreateRecipPage);
   }
-  seePreview() {
-    this.navCtrl.push(PreviewPage)
+  seePreview(id) {
+    console.log(id);
+    this.navCtrl.push(PreviewPage, {id: id})
   }
 }

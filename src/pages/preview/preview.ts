@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { GlobalProvider } from '../../providers/global/global';
 
 /**
  * Generated class for the PreviewPage page.
@@ -14,8 +15,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'preview.html',
 })
 export class PreviewPage {
+  id: string = '';
+  recette:any = {};
+  constructor(public navCtrl: NavController, public navParams: NavParams, public global: GlobalProvider) {
+    this.id = this.navParams.get("id");
+    console.log(this.id);
+    this.recette = this.global.GetRecette(this.id);
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {

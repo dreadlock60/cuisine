@@ -43,11 +43,11 @@
           </ion-grid>
           <ion-item>
               <ion-label floating>Title</ion-label>
-              <ion-input type="text"></ion-input>
+              <ion-input [(ngModel)]="title" type="text"></ion-input>
             </ion-item>
             <ion-item>
                 <ion-label>Discription</ion-label>
-                <ion-textarea name="description"></ion-textarea>
+                <ion-textarea [(ngModel)]="discription" name="description"></ion-textarea>
               </ion-item>
       </ion-list>
   </div> 
@@ -92,5 +92,5 @@
     </ion-row>
   </ion-grid>
   </div> 
-  <button ion-button full> Envoyer la Recette</button> 
+  <button ion-button full (click)="addRecette()"> Envoyer la Recette</button> 
 </ion-content>

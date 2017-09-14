@@ -15,29 +15,22 @@ import { GlobalProvider } from "../../providers/global/global";
   templateUrl: 'register.html',
 })
 export class RegisterPage {
-  firstName: string;
-  lastName: string;
+  
   email: string;
-  address: string;
-  tel: number = 0;
   password: string ;
+  name: string;
   rePassword: string;
   constructor(public navCtrl: NavController, public navParams: NavParams, public global: GlobalProvider) {
   }
 
   submitRegister() {
     let dataRe = {
-      first_name : this.firstName,
-      last_name: this.lastName,
       email: this.email,
-      address: this.address,
-      tel: this.tel,
-      password:this.password,
-      password_confir: this.rePassword
+      name: this.name,
+      password:this.password
     }
-    this.global.RegisterAcount(dataRe).subscribe(data => {
-      console.log(data);
-    });
+    console.log(dataRe);
+    this.global.Register(dataRe);
     this.navCtrl.pop();
   }
   goToLoginPage() {

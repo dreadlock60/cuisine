@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>preview</ion-title>
+    <ion-title>{{recette.title}} details</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,31 +15,13 @@
 
 <ion-content>
 <img src="../assets/img/plats1.jpg" alt="" width="100%" >
-<h2 class="heading">TITLE HERE</h2>
+<h2 class="heading">{{recette.title}}</h2>
 
-<p class="dicription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum vero doloribus aut molestiae eos eius quam quo nemo quidem consectetur iste, debitis optio cum beatae expedita nihil dicta maxime omnis?</p>
+<p class="dicription">{{recette.discription}}</p>
 
 <ion-list>
-  <ion-item> 
-    1kg farine
+  <ion-item *ngFor="let ingredient of recette.ingredients"> 
+    {{ingredient.poids}} de {{ingredient.name}}
   </ion-item>
-  <ion-item> 
-      1kg farine
-    </ion-item>
-    <ion-item> 
-        1kg farine
-      </ion-item>
-      <ion-item> 
-          1kg farine
-        </ion-item>
-        <ion-item> 
-            1kg farine
-          </ion-item>
-          <ion-item> 
-              1kg farine
-            </ion-item>
-            <ion-item> 
-                1kg farine
-              </ion-item>
 </ion-list>
 </ion-content>

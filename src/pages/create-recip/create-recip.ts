@@ -1,6 +1,8 @@
 import { Component, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import { GlobalProvider } from '../../providers/global/global';
+import { LandingPage } from '../landing/landing';
 
 /**
  * Generated class for the CreateRecipPage page.
@@ -18,9 +20,11 @@ export class CreateRecipPage {
   captureDataUrl: string = '';
   ingredientName: string = '';
   ingredientPoidsNbr: number = 0;
+  title: string = '';
+  discription: string = '';
   ingredientPoidsType: string = 'kg';
   ingredients: Array<any> = [];
-  constructor(public element:ElementRef,private camera: Camera,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public element:ElementRef,private camera: Camera,public navCtrl: NavController, public navParams: NavParams, public global: GlobalProvider) {
     this.element = element;
   }
 
@@ -68,5 +72,16 @@ capture() {
     this.ingredientName = '';
     this.ingredientPoidsNbr = 0;
     this.ingredientPoidsType = 'kg';
+  }
+  addRecette() {
+    let recette = {
+      ingredients: this.ingredients,
+      title: this.title,
+      discription: this.discription,
+      creator: this.global.user
+
+    }
+    this.global.CreateRecette(recette);
+    this.navCtrl.push(LandingPage);
   }
 }

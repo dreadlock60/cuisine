@@ -21,7 +21,6 @@ export class PreviewPage {
     this.id = this.navParams.get("id");
     console.log(this.id);
     this.recette = this.global.GetRecette(this.id);
-
   }
 
   ionViewDidLoad() {

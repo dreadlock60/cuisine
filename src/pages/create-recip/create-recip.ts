@@ -74,11 +74,13 @@ capture() {
     this.ingredientPoidsType = 'kg';
   }
   addRecette() {
+    let id = Math.round(Math.random() * 10000000)
     let recette = {
       ingredients: this.ingredients,
       title: this.title,
       discription: this.discription,
-      creator: this.global.user
+      creator: this.global.user,
+      id: id
 
     }
     this.global.CreateRecette(recette);

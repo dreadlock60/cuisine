@@ -22,7 +22,9 @@
     </ion-list>
     <div padding>
         <ion-grid>
+
             <ion-row>
+              <span class="red" *ngIf="alert">The information you just entred are Wrong !!</span>
               <ion-col col-6><button ion-button outline full (click)="goToLobbyPage()">LOGIN</button></ion-col>
               <ion-col col-6><button ion-button full (click)="goToRegisterPage()">REGISTER</button></ion-col>
             </ion-row>

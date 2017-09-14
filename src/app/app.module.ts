@@ -11,6 +11,9 @@ import { LobbyPage } from "../pages/lobby/lobby";
 import { LandingPage } from "../pages/landing/landing";
 import { CreateRecipPage } from "../pages/create-recip/create-recip";
 import { Camera } from '@ionic-native/camera';
+import { PreviewPage } from "../pages/preview/preview";
+import { GlobalProvider } from '../providers/global/global';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -20,10 +23,12 @@ import { Camera } from '@ionic-native/camera';
     LobbyPage,
     LandingPage,
     CreateRecipPage,
+    PreviewPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -32,13 +37,16 @@ import { Camera } from '@ionic-native/camera';
     RegisterPage,
     LobbyPage,
     LandingPage,
-    CreateRecipPage
+    CreateRecipPage,
+    PreviewPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Camera,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    GlobalProvider,
+    HttpModule
   ]
 })
 export class AppModule {}

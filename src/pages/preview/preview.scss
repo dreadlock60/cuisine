@@ -1,0 +1,17 @@
+page-preview {
+ text-align: justify;
+ .heading {
+     display: block;
+     text-align: center;
+     width:100%;
+     padding-bottom: 12px;
+     border-bottom: 1px solid lightgray;
+ }
+ .dicription {
+     text-align: justify;
+     display: block;
+     width: 80%;
+     margin: auto;
+     padding-bottom: 12px;
+ }
+}

@@ -6,4 +6,22 @@ page-create-recip {
     background: contain;
     margin: auto;
 }
+.picbtn {
+    width: 100%;
+    font-size: 7em;
+    background: transparent;
+}
+.deletebtn {
+    position: absolute;
+    left: 10%;
+    top:8%;
+    font-size: 2em;
+    background: white;
+    border-radius: 100%;
+    border: 1px solid lightgray;
+    padding: 8px 12px 8px 12px;
+}
+.section {
+    border: 1px solid lightgray;
+}
 }

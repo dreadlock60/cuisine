@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CreateRecipPage } from "../create-recip/create-recip";
+import { PreviewPage } from "../preview/preview";
 
 /**
  * Generated class for the LandingPage page.
@@ -25,5 +26,7 @@ export class LandingPage {
   openCreateRecip(){
     this.navCtrl.push(CreateRecipPage);
   }
-
+  seePreview() {
+    this.navCtrl.push(PreviewPage)
+  }
 }
